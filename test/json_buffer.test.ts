@@ -51,7 +51,7 @@ Deno.test("Object Deletion (Swap and Pop)", () => {
   assertEquals(Object.keys(db).length, 4);
 
   // Delete a middle key
-  // @ts-ignore
+  // @ts-ignore: Intended for testing
   delete db.b;
 
   // Verify logic
@@ -62,9 +62,9 @@ Deno.test("Object Deletion (Swap and Pop)", () => {
   assertEquals(Object.keys(db).length, 3);
 
   // Add a new key to ensure slot reuse/append works
-  // @ts-ignore
+  // @ts-ignore: Intended for testing
   db.e = 5;
-  // @ts-ignore
+  // @ts-ignore: Intended for testing
   assertEquals(db.e, 5);
   assertEquals(Object.keys(db).length, 4);
 });

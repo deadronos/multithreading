@@ -83,5 +83,5 @@ self.onmessage = async (event: MessageEvent<WorkerTaskPayload>) => {
 };
 
 self.onerror = (e) => {
-  console.error(e.message, e);
+  console.error((e as ErrorEvent).message ?? e, e);
 };
