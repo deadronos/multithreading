@@ -49,7 +49,7 @@ Deno.test("Object CRUD: Deletion and Existence", () => {
   assertEquals("z" in db, false);
 
   // Delete operator
-  // @ts-ignore
+  // @ts-ignore: Deno: Deno
   const deleteResult = delete db.b;
   assertEquals(deleteResult, true); // delete returns true if successful
 
@@ -119,7 +119,7 @@ Deno.test("Object Copying: Object.assign", () => {
 
   assertEquals(db.a, 1);
   assertEquals(db.b, 3); // Updated
-  // @ts-ignore: dynamic property test
+  // @ts-ignore: Deno: Deno: dynamic property test
   assertEquals(db.c, 4); // Created
 
   // Merge FROM the shared buffer
@@ -138,7 +138,7 @@ Deno.test("Object Copying: Spread Syntax", () => {
   assertEquals(plainObj.baz, "qux");
 
   // Ensure it is a genuine copy, not a reference
-  // @ts-ignore: testing mutation independence
+  // @ts-ignore: Deno: Deno: testing mutation independence
   plainObj.foo = "changed";
   assertEquals(db.foo, "bar");
 });
