@@ -331,14 +331,14 @@ export class Receiver<T> extends ChannelHandle<T> {
       if (result.ok) {
         yield result.value;
       } else {
-        const msg = result.error.message;
+        const msg = (result as any).error.message;
         if (
           msg === ERR_CLOSED.message ||
           msg === ERR_DISPOSED_RECEIVER.message
         ) {
           return;
         }
-        throw result.error;
+        throw (result as any).error;
       }
     }
   }

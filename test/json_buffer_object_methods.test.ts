@@ -119,7 +119,7 @@ Deno.test("Object Copying: Object.assign", () => {
 
   assertEquals(db.a, 1);
   assertEquals(db.b, 3); // Updated
-  // @ts-ignore: Intended for testing: dynamic property test
+  // @ts-ignore: Intended for testing
   assertEquals(db.c, 4); // Created
 
   // Merge FROM the shared buffer
@@ -138,7 +138,7 @@ Deno.test("Object Copying: Spread Syntax", () => {
   assertEquals(plainObj.baz, "qux");
 
   // Ensure it is a genuine copy, not a reference
-  // @ts-ignore: Intended for testing: testing mutation independence
+  // @ts-ignore: Intended for testing
   plainObj.foo = "changed";
   assertEquals(db.foo, "bar");
 });
