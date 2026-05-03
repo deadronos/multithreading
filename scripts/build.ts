@@ -115,6 +115,7 @@ const compilerOptions: ts.CompilerOptions = {
   rootDir: ".",
   lib: ["lib.esnext.d.ts", "lib.dom.d.ts", "lib.webworker.d.ts"],
   skipLibCheck: true,
+  allowImportingTsExtensions: true,
   rewriteRelativeImportExtensions: true,
   stripInternal: true,
 };
